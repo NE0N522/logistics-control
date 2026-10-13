@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: logistics-control
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BUSINESS_TIMEZONE
+        value: Asia/Bishkek
+      - key: TRUST_PROXY
+        value: "true"
+      - key: TURSO_DATABASE_URL
+        sync: false
+      - key: TURSO_AUTH_TOKEN
+        sync: false

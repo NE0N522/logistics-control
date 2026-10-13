@@ -1,0 +1,32 @@
+{
+  "name": "logistics-control",
+  "private": true,
+  "version": "2.1.0",
+  "description": "Система управления грузовыми перевозками и логистическими отчётами",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c blue,green \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "seed": "npm run seed:logistics",
+    "seed:empty": "npm run seed:empty -w backend",
+    "seed:cloud-reset": "npm run seed:cloud-reset -w backend",
+    "seed:logistics": "npm run seed:logistics -w backend",
+    "seed:demo": "npm run seed:demo -w backend",
+    "db:import:cloud": "npm run db:import:cloud -w backend",
+    "build": "npm run build -w frontend",
+    "start": "npm run start -w backend",
+    "test": "npm run test -w backend",
+    "bootstrap-admin": "npm run bootstrap-admin -w backend",
+    "create-user": "npm run create-user -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

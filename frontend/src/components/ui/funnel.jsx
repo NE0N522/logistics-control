@@ -1,0 +1,2 @@
+import { formatMoney, formatNumber } from '../../lib/format.js';
+export function Funnel({stages=[]}){const max=Math.max(1,...stages.map(s=>s.count||0));return <div className="funnel">{stages.map(s=><div className="funnel__row" key={s.stage}><span className="funnel__label">{s.label}</span><div className="funnel__track" aria-hidden="true"><div className="funnel__fill" style={{width:`${Math.max(2,(s.count/max)*100)}%`}}/></div><span className="funnel__meta">{formatNumber(s.count)} · {formatMoney(s.amount,{compact:true})}</span></div>)}</div>;}

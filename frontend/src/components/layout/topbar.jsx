@@ -1,0 +1,2 @@
+import { Menu } from 'lucide-react';
+export function Topbar({title,subtitle,actions,onMenu}){return <header className="topbar"><div className="row" style={{minWidth:0}}>{onMenu&&<button className="topbar__menu" onClick={onMenu} aria-label="Открыть меню"><Menu size={19}/></button>}<div style={{minWidth:0}}><div className="topbar__title">{title}</div>{subtitle&&<div className="topbar__meta">{subtitle}</div>}</div></div>{actions&&<div className="row">{actions}</div>}</header>}
